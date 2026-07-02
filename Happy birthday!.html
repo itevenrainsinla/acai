@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Universe 🎂</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:Poppins,sans-serif;
+background:linear-gradient(135deg,#ffd6e7,#ffeaf3,#fff);
+overflow-x:hidden;color:#5c4b56
+}
+.hero{
+min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
+text-align:center;padding:20px
+}
+.glass{
+background:rgba(255,255,255,.55);
+backdrop-filter:blur(10px);
+border-radius:30px;
+padding:30px;
+box-shadow:0 8px 25px rgba(255,105,180,.15)
+}
+h1{font-family:Fredoka,sans-serif;color:#ff4f96;font-size:3rem}
+.btn{
+border:none;padding:14px 22px;border-radius:999px;
+background:#ff77ac;color:white;cursor:pointer;margin:8px;font-weight:600
+}
+.section{padding:40px 20px;max-width:1100px;margin:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.card{
+background:white;border-radius:24px;padding:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.06)
+}
+.photo{
+height:220px;border-radius:20px;overflow:hidden
+}
+.photo img{width:100%;height:100%;object-fit:cover}
+.hidden{display:none}
+#popup{
+position:fixed;inset:0;background:rgba(0,0,0,.45);
+display:none;justify-content:center;align-items:center;padding:20px;z-index:999
+}
+.popup-box{
+background:white;padding:25px;border-radius:24px;max-width:500px;text-align:center
+}
+.heart{
+position:fixed;top:-20px;animation:fall linear forwards
+}
+@keyframes fall{
+to{transform:translateY(110vh)}
+}
+textarea,input{
+width:100%;padding:12px;border-radius:12px;border:1px solid #ffd0e2;margin-top:10px
+}
+
+footer{
+    margin-top:25px;
+    color:#888;
+    font-size:0.9rem;
+}
+
+.footer{
+    margin-top:60px;
+    padding:40px 20px;
+    text-align:center;
+    background:rgba(255,255,255,0.5);
+    backdrop-filter:blur(10px);
+    border-top:2px solid rgba(255,182,193,0.4);
+}
+
+.footer-title{
+    font-size:1.5rem;
+    font-weight:600;
+    color:#ff5f9e;
+    margin-bottom:10px;
+}
+
+.footer-hearts{
+    margin-top:15px;
+    font-size:1.3rem;
+}
+</style>
+</head>
+
+<audio id="bgMusic" autoplay loop>
+    <source src="bestfriend.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+document.addEventListener("click", function () {
+    const music = document.getElementById("bgMusic");
+    music.play();
+}, { once: true });
+</script>
+<body>
+
+<div class="hero">
+<div class="glass">
+<h1>🎀 Happy Birthday Harumi 🎀</h1>
+<p style="margin:15px 0">For my bestfriend, my sister, my twins, my soulmate! <3 </p>
+<button class="btn" onclick="document.getElementById('universe').scrollIntoView({behavior:'smooth'})">
+🎁 Open Birthday Universe
+</button>
+</div>
+</div>
+
+<div id="universe" class="section">
+
+<div class="card">
+<h2>💌 Birthday Letter</h2>
+<p>
+WOYYY, A-A-ANYEONKGG! Selamat ulang tahun, happy birhday, saeng-il chughahae, otanjobiomedeto rumi chan a.k.a alleya chan >,< 🎂✨<br><br>
+Selamat 16 tahun jir, ah 16 apaan cok, umur bayi ya itu? awokaaokaaok, bercanda rum. Semoga di tahun ke 16 ini hidup lu dipenuhi hal-hal baik, keberuntungan, kesehatan, dan banyak alasan yang datang buat lu tersenyum selalu ya.
+Terima kasih, arigatou, sankyu karena sudah mau berteman sama gua, bukan cuman temen, tapi lu adalah soulmate, twins, sister terbaik gua harumi 🥺💗
+</p>
+</div>
+
+<br>
+
+<div class="grid">
+<div class="card">
+<h3>🎧 Song for ur Birthday!</h3>
+<br></br>
+<p>Nih dengerin ya rum, gua milih lagunya lama banget asal lu tau.</p>
+<br></br>
+<audio controls autoplay loop style="width:100%">
+<source src="Song1.mp3" type="audio/mpeg">
+</audio>
+<audio controls autoplay loop style="width:100%">
+<source src="Song2.mp3" type="audio/mpeg">
+</audio>
+<audio controls autoplay loop style="width:100%">
+<source src="Song3.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<div class="card">
+<h3>🎥 Special Video</h3>
+<video controls width="100%">
+<source src="videohbd.mp4" type="video/mp4">
+</video>
+</div>
+</div>
+
+<h2 style="margin:30px 0">📸 Our Memories</h2>
+<div class="grid">
+<div class="photo"><img src="foto1.jpg"></div>
+<div class="photo"><img src="foto2.jpg"></div>
+<div class="photo"><img src="foto3.jpg"></div>
+<div class="photo"><img src="foto4.jpg"></div>
+<div class="photo"><img src="foto5.jpg"></div>
+<div class="photo"><img src="foto6.jpg"></div>
+<div class="photo"><img src="foto7.jpg"></div>
+<div class="photo"><img src="foto8.jpg"></div>
+</div>
+
+<br>
+
+<div class="grid">
+<div class="card">
+<h3>🎁 Random Wishes</h3>
+<p id="wish">Klik tombolnya!</p>
+<button class="btn" onclick="randomWish()">Wish Baru</button>
+</div>
+
+<div class="card">
+<h3>🏆 Birthday Achievement</h3>
+<ul>
+<li>+1 tahun yang berarti tahun depan udah 17 ✨</li>
+<li>+50 aura karena lu udah 16 tahun</li>
+<li>+100 aura karena lu udah aud</li>
+<li>+1000 aura karena lu bakal memasuki fase yang lebih +++</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>🔏 Secret Message</h3>
+<button class="btn" onclick="openSecret()">Jangan Klik</button>
+</div>
+
+<div class="card">
+<h3>💖 Emergency Happiness Button</h3>
+<button class="btn" onclick="happyBtn()">Press When Sad</button>
+</div>
+</div>
+
+<br>
+
+<div class="card">
+<h2>⏳ Friendship Countdown</h2>
+<p id="days"></p>
+</div>
+
+<br>
+
+<div class="card">
+<h2>💬 Guestbook</h2>
+<input id="name" placeholder="Nama">
+<textarea id="msg" placeholder="Tulis pesan..."></textarea>
+<button class="btn" onclick="addMessage()">Kirim</button>
+<div id="guestbook"></div>
+</div>
+
+</div>
+
+
+
+<div id="popup">
+<div class="popup-box">
+<h2>💗 Secret Message 💗</h2>
+<p>
+Gua tau lu bakal pencet jir! Jaga rahasia ini ya....<br><br>
+Semoga semua impianlu menemukan jalannya untuk menjadi nyata.
+Happy Birthday!😝😝
+</p>
+<button class="btn" onclick="closeSecret()">Tutup</button>
+</div>
+</div>
+
+<script>
+const wishes=[
+"Semoga saldo dana lu ga pernah di bawah cepek ",
+"Semoga tugas lu berkurang ",
+"Semoga langgeng sama yuta 💖",
+"Semoga keterima nanti jadi maba UI ",
+"Semoga terus menjadi orang baik, ceria yang selama ini gua kenal <3"
+];
+
+function randomWish(){
+document.getElementById("wish").innerText=
+wishes[Math.floor(Math.random()*wishes.length)];
+}
+
+function openSecret(){
+document.getElementById("popup").style.display="flex";
+}
+
+function closeSecret(){
+document.getElementById("popup").style.display="none";
+}
+
+function happyBtn(){
+alert("Inget rum, lu selalu hebat, lu berharga, dan lu selalu dicintai disini💗");
+}
+
+function addMessage(){
+let n=document.getElementById("name").value;
+let m=document.getElementById("msg").value;
+if(!n||!m)return;
+document.getElementById("guestbook").innerHTML+=
+`<div class="card" style="margin-top:10px"><b>${n}</b><br>${m}</div>`;
+}
+
+const startDate=new Date("2025-03-11");
+const now=new Date();
+const diff=Math.floor((now-startDate)/(1000*60*60*24));
+document.getElementById("days").innerText=
+"Kalian sudah berteman selama "+diff+" hari ";
+
+function createHeart(){
+const h=document.createElement("div");
+h.className="heart";
+h.innerHTML=["🎉","🎂", "💗","💕"][Math.floor(Math.random()*4)];
+h.style.left=Math.random()*100+"vw";
+h.style.fontSize=(20+Math.random()*15)+"px";
+h.style.animationDuration=(3+Math.random()*4)+"s";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),7000);
+}
+setInterval(createHeart,350);
+</script>
+
+<script>
+function showFinalMessage(){
+    alert(
+`Happy Birthday! 🎂💗
+
+Semoga semua impian lu tercapai,
+semoga kesehatan dan kebahagiaan selalu menyertai lu,
+dan semoga lu selalu menemukan alasan untuk tersenyum.
+
+You deserve all the good things in the world. 🎀✨`
+    );
+}
+</script>
+
+<div class="card" style="margin-top:30px;text-align:center;">
+    <h2>🌷 One Last Thing...</h2>
+
+    <p style="margin-top:15px;line-height:1.8;">
+        Maaf ya rumi kalau selama ini gua banyak salah ke elu ataupun apapun itu kekurangan gua selama pertemanan kita. Maaf juga kalau gift gua ngga se bagus itu, jujur gua cuman bisa ngelakuin ini, i'll try my best. Gua buat ini kelabakan banget, so sorry kalau ga sesuai ekspetasi elu ya.
+        <br><br>
+
+        For the last, gua mau ngucapin makasih banyak sekali lagi atas semua yang lu beri ke gua, gua selalu ngerasa bersyukur karena udah temenan sama lu, lu lah temen RP yang bukan hanya sekedar temen RP doang. rum makasih ya udah buat gua selalu bersyukur dengan pertemanan ini (gamau gua kasih tau disini soalnya malu). Maaf juga gua akhir akhir ini jadi kurang ngabisin waktu sama elu dan yang lainnya, tapi camkan kalo gua sayang banget sama lu Harumi, Alleya.
+Rum semoga kita berdua bisa ngerayain ultah kita di tahun berikutnya ya? gua harap kita langgeng temenannya ya rum, thank u for everything, sekali lagi selamat ulang tahun Harumi!
+        <br><br>
+
+        Semoga tahun ini menjadi salah satu tahun terbaik dalam hidup lu.
+        ✨💗
+    </p>
+
+    <button class="btn" onclick="showFinalMessage()">
+        💌 Open Final Message
+    </button>
+</div>
+<footer class="footer">
+    <div class="footer-content">
+
+        <p class="footer-title">
+            🎀 Made With Love 🎀
+        </p>
+
+        <p>
+            Created specially for my favorite birthday person 💗
+        </p>
+
+        <p style="margin-top:10px;">
+            © 2026 Birthday Universe
+        </p>
+
+        <div class="footer-hearts">
+            💗 🎀 🌷 ✨ 🧸 💌
+        </div>
+
+    </div>
+</footer>
+
+</body>
+</html>
